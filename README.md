@@ -27,10 +27,14 @@
 ## About The Project
 
 <p align="center">
-<img width="400px" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.png"/>
+<img width="400px" src="https://github.com/JonathanCourtois/Machine_Qlearning/image/Presentation/FirstBuild.png"/>
 </p>
 
+<p align="center">
+<img width="400px" src="https://github.com/JonathanCourtois/Machine_Qlearning/image/Presentation/blob/master/FirstBuild.png"/>
+</p>
 
+image/Presentation/FirstBuild.PNG
 
 # MackeyGlass.jl
 Julia scripts to generate Mackey Glass time series.

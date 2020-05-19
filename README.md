@@ -58,7 +58,7 @@ in Julia of Matlab code, available [here](https://ww2.mathworks.cn/matlabcentral
 [stars-url]: https://github.com/JonathanCourtois/Machine_Qlearning/stargazers
 [issues-shield]: https://img.shields.io/github/issues/JonathanCourtois/Machine_Qlearning.svg?style=flat-square
 [issues-url]: https://github.com/JonathanCourtois/Machine_Qlearning/issues
-[license-shield]: https://img.shields.io/github/MIT/JonathanCourtois/Machine_Qlearnin.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/JonathanCourtois/Machine_Qlearnin.svg?style=flat-square
 [license-url]: https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jonathan-courtois

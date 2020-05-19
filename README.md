@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/objects/submarineV3.PNG" align="center" height="48" width="55" ></a>
+  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/objects/submarineV3.PNG" align="center" height="48" width="60" ></a>
   
   <h3 align="center">Machine Qlearning</h3>
 
@@ -20,9 +20,9 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [The Game](#The Game)
-** [Game rules](#Game rules)
-* [The Network](#The Network)
+* [The Game](#the-game)
+* [Game rules](#game-rules)
+* [The Network](#the-network)
 
 
 

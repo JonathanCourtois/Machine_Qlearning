@@ -8,23 +8,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/JonathanCourtois/Machine_Qlearning">
-    <img src="image/Presentation/FirstBuild.png" alt="Logo" width="80" height="80">
-  </a>
-
+  <a href="url"><img src="http://image/Presentation/FirstBuild.PNG" align="left" height="48" width="48" ></a>
+  
   <h3 align="center">Machine Qlearning</h3>
 
   <p align="center">
-    Funny test application of Deep Qlearning on a Game.
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    Funny test application of Deep Qlearning on a Python Game!
   </p>
 </p>
 <!-- TABLE OF CONTENTS -->

@@ -63,7 +63,7 @@ You Start on left top corner:
 <p align="center">
   Reach the signal to win :<br>
   <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Objectif.PNG"/><br>
-  Avoid naval mine:
+  Avoid naval mine:<br>
   <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/boom.PNG"/><br>
   <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Detonation.PNG"/><br>
  </p>

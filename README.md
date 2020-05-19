@@ -45,21 +45,23 @@ You Start on left top corner
 <p align="center">
 <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
 </p>
-Some naval mines are hidden. you have 5 actions possible:
-- Move Up         : Go to the upper case
-- Move Down       : Go to the lower case
-- Move Left       : Go to the lefr case
-- Move Right      : Go to the right case
-<img width="100" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Direction.PNG"/>
+Some naval mines are hidden. you have 5 actions possible:<br>
+- Move Up         : Go to the upper case<br>
+- Move Down       : Go to the lower case<br>
+- Move Left       : Go to the lefr case<br>
+- Move Right      : Go to the right case<br>
+<img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Direction.PNG"/><br>
 - Use Your Sonar  : Scan a 5x5 box around you to seek naval mine
 
-.You can use your sonar by pressing 'space' to detect naval mine
-<p align="left">
-<img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/DetectMine.PNG"/>
-<img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/AllMines.PNG"/>
+<p align="Center">
+You can use your sonar by pressing 'space' to detect naval mine:
+<img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/DetectMine.PNG"/>
+<img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/AllMines.PNG"/>
 </p>
-.Sonar range
-<img width="100" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Sonar.PNG"/>
+<p align="Center">
+Sonar range:
+<img align="left" width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Sonar.PNG"/>
+</p>
 
 <!-- THE NETWORK -->
 ## The Network

@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/objects/submarineV3.PNG" align="center" height="48" width="51" ></a>
+  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/objects/submarineV3.PNG" align="center" height="48" width="55" ></a>
   
   <h3 align="center">Machine Qlearning</h3>
 
@@ -29,7 +29,10 @@
 <p align="center">
 <img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
 </p>
-
+<p align="left">
+  The project is juste a random initative of building a little game and train an IA on it. After few search, I had read that the Neuronal Network with reinforcement Qlearning was a good choice. Thanks to [Phil Tabor](https://github.com/philtabor) and his [video](https://www.youtube.com/watch?v=wc-FxNENg9U&t=2080s), on his youtube channel, I build a Deep_Q Network on [Python](https://www.python.org/) ([PyTorch coding](https://pytorch.org/)).
+</p> 
+  
 This script generates a Mackey-Glass time series using the 4th 
 order Runge-Kutta method. The code is a straighforward translation 
 in Julia of Matlab code, available [here](https://ww2.mathworks.cn/matlabcentral/fileexchange/24390-mackey-glass-time-series-generator?s_tid=prof_contriblnk).                                           

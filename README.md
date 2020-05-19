@@ -20,36 +20,34 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+* [The Game](#The Game)
+** [Game rules](#Game rules)
+* [The Network](#The Network)
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+The project is juste a random initative of building a little game and train an IA on it. After few search, I had read that the Neuronal Network with reinforcement Qlearning was a good choice. 
+
+<!-- THE GAME -->
+## The Game
+
 <p align="center">
 <img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
 </p>
-<p align="left">
-  The project is juste a random initative of building a little game and train an IA on it. After few search, I had read that the Neuronal Network with reinforcement Qlearning was a good choice. Thanks to [Phil Tabor](https://github.com/philtabor) and his [video](https://www.youtube.com/watch?v=wc-FxNENg9U&t=2080s), on his youtube channel, I build a Deep_Q Network on [Python](https://www.python.org/) ([PyTorch coding](https://pytorch.org/)).
-</p> 
-  
-This script generates a Mackey-Glass time series using the 4th 
-order Runge-Kutta method. The code is a straighforward translation 
-in Julia of Matlab code, available [here](https://ww2.mathworks.cn/matlabcentral/fileexchange/24390-mackey-glass-time-series-generator?s_tid=prof_contriblnk).                                           
- 
 
-## Exemple
+<!-- GAME RULES -->
+### Game rules
 
-```julia
- using MackeyGlass
- using Plots
 
- T,X = MGGenerator()
- plot(T, X, label = "Mackey Glass")
-```
-<p align="center">
-<img width="400px" src="https://github.com/JonathanCourtois/MackeyGlass/blob/master/MGplot.png"/>
-</p>
+<!-- THE NETWORK -->
+## The Network
+
+Thanks to [Phil Tabor](https://github.com/philtabor) and his [video](https://www.youtube.com/watch?v=wc-FxNENg9U&t=2080s), on his youtube channel, I build a Deep_Q Network on [Python](https://www.python.org/) ([PyTorch coding](https://pytorch.org/)).
+The newtork, in our case, is a 3 hidden layers Neuronal Network with Relu activation function.
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

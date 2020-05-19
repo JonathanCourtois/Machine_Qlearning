@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG" align="left" height="48" width="48" ></a>
+  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/objects/submarineV3.PNG" align="left" height="48" width="48" ></a>
   
   <h3 align="center">Machine Qlearning</h3>
 
@@ -27,19 +27,9 @@
 ## About The Project
 
 <p align="center">
-<img width="400px" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
+<img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
 </p>
 
-<p align="center">
-<img width="400px" src="https://github.com/JonathanCourtois/Machine_Qlearning/image/Presentation/blob/master/FirstBuild.png"/>
-</p>
-
-image/Presentation/FirstBuild.PNG
-
-# MackeyGlass.jl
-Julia scripts to generate Mackey Glass time series.
-
-## Info
 This script generates a Mackey-Glass time series using the 4th 
 order Runge-Kutta method. The code is a straighforward translation 
 in Julia of Matlab code, available [here](https://ww2.mathworks.cn/matlabcentral/fileexchange/24390-mackey-glass-time-series-generator?s_tid=prof_contriblnk).                                           
@@ -57,10 +47,6 @@ in Julia of Matlab code, available [here](https://ww2.mathworks.cn/matlabcentral
 <p align="center">
 <img width="400px" src="https://github.com/JonathanCourtois/MackeyGlass/blob/master/MGplot.png"/>
 </p>
-
-
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

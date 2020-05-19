@@ -511,8 +511,8 @@ class underwater() :
       
 # %% manual Play
 manual_play = True
-load_agent = False
-path = r'D:\Session\Nouveau dossier (4)\COURS\Code\SubmarineGame'
+load_agent = True
+path = r'../DeepQ'
 if (manual_play):
     agent = Agent(gamma=0.99, epsilon = 1.0, batch_size=1, n_actions = 5,
                   eps_end=0.01, input_dims=[105], lr=0.001)

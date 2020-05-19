@@ -48,19 +48,19 @@ GRAY = (135, 135, 135)
 # import submarine image
 submarineImg = []
 for i in range(-1,4,1):
-    submarineImg.append(pygame.image.load('submarineV'+str(i)+'.PNG'))
+    submarineImg.append(pygame.image.load('../image/objects/submarineV'+str(i)+'.PNG'))
     submarineImg[i+1] = pygame.transform.scale(submarineImg[i+1], (int((displayWidth-infoPanelWidth)/10), int(displayHeight/10)))
  
 # import Signal image
 signalImg = []
 for i in range(0,4,1):
-    signalImg.append(pygame.image.load('signal'+str(i)+'.PNG'))
+    signalImg.append(pygame.image.load('../image/objects/signal'+str(i)+'.PNG'))
     signalImg[i] = pygame.transform.scale(signalImg[i], (int((displayWidth-infoPanelWidth)/10), int(displayHeight/10))) 
 
 # import Mine image
 mineImg = []
 for i in range(0,2,1):
-    mineImg.append(pygame.image.load('mine'+str(i)+'.PNG'))
+    mineImg.append(pygame.image.load('../image/objects/mine'+str(i)+'.PNG'))
     mineImg[i] = pygame.transform.scale(mineImg[i], (int((displayWidth-infoPanelWidth)/10), int(displayHeight/10)))
 
 # %% Class declaration
@@ -180,6 +180,7 @@ class Mine(pygame.sprite.Sprite):
         # animation
         self.blow_up = False
         self.animation_time = 0
+        self.animation_limit = 3
         self.hidden = True
     
     def spawn(self, games):
@@ -205,7 +206,7 @@ class Mine(pygame.sprite.Sprite):
             if (frame_ctr == 0):
                 self.hidden = False
                 self.animation_time += 1
-                if(self.animation_time > 3):
+                if(self.animation_time > self.animation_limit):
                     game.mine.remove(self)
             
   

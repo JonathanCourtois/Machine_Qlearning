@@ -1,6 +1,3 @@
-# Machine_Qlearning
-Little test with a game and deep qlearning Neuronal Network
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -12,13 +9,13 @@ Little test with a game and deep qlearning Neuronal Network
 <br />
 <p align="center">
   <a href="https://github.com/JonathanCourtois/Machine_Qlearning">
-    <img src="images/Presentation/FirstBuild.png" alt="Logo" width="80" height="80">
+    <img src="image/Presentation/FirstBuild.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Machine Qlearning</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Funny test application of Deep Qlearning on a Game.
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -177,7 +174,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [issues-shield]: https://img.shields.io/github/issues/JonathanCourtois/Machine_Qlearning.svg?style=flat-square
 [issues-url]: https://github.com/JonathanCourtois/Machine_Qlearning/issues
 [license-shield]: https://img.shields.io/github/license/JonathanCourtois/Machine_Qlearnin.svg?style=flat-square
-[license-url]: https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/LICENSE.txt
+[license-url]: https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jonathan-courtois
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: image/Presentation/FirstBuild.PNG

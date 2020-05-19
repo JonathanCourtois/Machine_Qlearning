@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="url"><img src="http://JonathanCourtois/Machine_Qlearning/image/Presentation/FirstBuild.PNG" align="left" height="48" width="48" ></a>
+  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG" align="left" height="48" width="48" ></a>
   
   <h3 align="center">Machine Qlearning</h3>
 
@@ -27,7 +27,7 @@
 ## About The Project
 
 <p align="center">
-<img width="400px" src="https://github.com/JonathanCourtois/Machine_Qlearning/image/Presentation/FirstBuild.png"/>
+<img width="400px" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
 </p>
 
 <p align="center">

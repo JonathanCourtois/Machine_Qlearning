@@ -38,27 +38,36 @@ Underwater is an easy game. You are a submarine and you have to each a signal wi
 ### Game rules.
 You Start on left top corner: 
 <p align="center">
-<img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
+  <img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
 </p>
 <p align="center">
-Some naval mines are hidden. you have 5 actions possible:<br>
-- Move Up         : Go to the upper case<br>
-- Move Down       : Go to the lower case<br>
-- Move Left       : Go to the lefr case<br>
-- Move Right      : Go to the right case<br>
-<img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Direction.PNG"/><br>
-- Use Your Sonar  : Scan a 5x5 box around you to seek naval mine
+  Some naval mines are hidden. you have 5 actions possible:<br>
+  - Move Up         : Go to the upper case<br>
+  - Move Down       : Go to the lower case<br>
+  - Move Left       : Go to the lefr case<br>
+  - Move Right      : Go to the right case<br>
+  <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Direction.PNG"/><br>
+  - Use Your Sonar  : Scan a 5x5 box around you to seek naval mine
 </p>
 <p align="Center">
-You can use your sonar by pressing 'space' to detect naval mine:<br>
-<img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/DetectMine.PNG"/>
-<img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/AllMines.PNG"/><br>
-</p>
-<p align="Center">
-Sonar range:
-<img align="left" width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Sonar.PNG"/>
+  You can use your sonar by pressing 'space' to detect naval mine:<br>
+  <img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/DetectMine.PNG"/>
+  <img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/AllMines.PNG"/><br>
 </p>
 
+<p align="Center">
+  Sonar range:<br>
+  <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Sonar.PNG"/><br>
+</p>
+
+<p align="center">
+  Reach the signal to win :<br>
+  <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Objectif.PNG"/><br>
+  Avoid naval mine:
+  <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/boom.PNG"/><br>
+  <img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Detonation.PNG"/><br>
+ </p>
+  
 
 <!-- THE NETWORK -->
 ## The Network

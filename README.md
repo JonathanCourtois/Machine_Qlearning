@@ -38,9 +38,28 @@ The project is juste a random initative of building a little game and train an I
 <img width="300" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
 </p>
 
+Underwater is an easy game. You are a submarine and you have to each a signal without dying. Beware of the naval mines !
 <!-- GAME RULES -->
-### Game rules
+### Game rules.
+You Start on left top corner 
+<p align="center">
+<img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/FirstBuild.PNG"/>
+</p>
+Some naval mines are hidden. you have 5 actions possible:
+- Move Up         : Go to the upper case
+- Move Down       : Go to the lower case
+- Move Left       : Go to the lefr case
+- Move Right      : Go to the right case
+<img width="100" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Direction.PNG"/>
+- Use Your Sonar  : Scan a 5x5 box around you to seek naval mine
 
+.You can use your sonar by pressing 'space' to detect naval mine
+<p align="left">
+<img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/DetectMine.PNG"/>
+<img width="200" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/AllMines.PNG"/>
+</p>
+.Sonar range
+<img width="100" src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/Presentation/Sonar.PNG"/>
 
 <!-- THE NETWORK -->
 ## The Network

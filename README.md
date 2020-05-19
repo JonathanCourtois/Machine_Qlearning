@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="url"><img src="http://image/Presentation/FirstBuild.PNG" align="left" height="48" width="48" ></a>
+  <a href="url"><img src="http://JonathanCourtois/Machine_Qlearning/image/Presentation/FirstBuild.PNG" align="left" height="48" width="48" ></a>
   
   <h3 align="center">Machine Qlearning</h3>
 

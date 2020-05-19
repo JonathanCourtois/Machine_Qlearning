@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/objects/submarineV3.PNG" align="left" height="48" width="48" ></a>
+  <a href="url"><img src="https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/image/objects/submarineV3.PNG" align="center" height="48" width="49" ></a>
   
   <h3 align="center">Machine Qlearning</h3>
 
@@ -59,7 +59,7 @@ in Julia of Matlab code, available [here](https://ww2.mathworks.cn/matlabcentral
 [issues-shield]: https://img.shields.io/github/issues/JonathanCourtois/Machine_Qlearning.svg?style=flat-square
 [issues-url]: https://github.com/JonathanCourtois/Machine_Qlearning/issues
 [license-shield]: https://img.shields.io/github/license/JonathanCourtois/Machine_Qlearnin.svg?style=flat-square
-[license-url]: https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/LICENSE
+[license-url]: https://github.com/JonathanCourtois/Machine_Qlearning/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jonathan-courtois
 [product-screenshot]: image/Presentation/FirstBuild.PNG

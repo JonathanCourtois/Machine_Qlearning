@@ -269,9 +269,9 @@ class underwater() :
         self.old_life_factor = life_factor
         
         # turn factor could decrease th reward to 0.2 if to loong
-        if(self.count_turn % 500 == 0):
+        if(self.count_turn % 100 == 0):
             if(self.score > 0.2):
-                self.turn_factor -= 0 #0.01
+                self.turn_factor -= 0.01
         
         
         # wall berserker bug <0
@@ -281,7 +281,7 @@ class underwater() :
             print('berserker + [{},{}]'.format(self.player[0].position[0],self.player[0].position[1]))
             self.berserker = False
     
-        self.score = round(dist_factor  + reward_life_factor + berserker_factor + self.turn_factor)
+        self.score = dist_factor  + reward_life_factor + berserker_factor + self.turn_factor
         if (self.score < 0):
             self.score = 0
         
@@ -510,7 +510,7 @@ class underwater() :
 # pl.scatter(np.arange(len(mlp.scoreEvolution)),mlp.scoreEvolution)
       
 # %% manual Play
-manual_play = True
+manual_play = False
 load_agent = True
 path = r'../DeepQ'
 if (manual_play):
@@ -538,13 +538,13 @@ if (IA_play):
     #agent.save(path)
 
 # %% Try Deep Q
-train_deep_Q = False
-load_agent = True
+train_deep_Q = True
+load_agent = False
 if (train_deep_Q):
     scores, eps_history, win, lifes= [], [], [], []
-    n_games = 100
+    n_games = 1000
     
-    agent = Agent(gamma=0.99, epsilon = 1, batch_size=10, n_actions = 5,
+    agent = Agent(gamma=0.99, epsilon = 1, batch_size=64, n_actions = 5,
                   eps_end=0.01, input_dims=[105], lr=0.001)
     
     if (load_agent):

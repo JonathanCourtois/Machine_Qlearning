@@ -11,6 +11,7 @@ Version :
     - V.0.0.4 "IA base work and rebuild game as class, mlp can play the game" 2020
     - V.0.0.5 "Implementing Qlearning " 2020
     - V.0.1 "Changing score method and reward " 2020
+    - V.0.1.1 "Changing input, direction of objects " 2020
 
 @author: Jonathan C
 """
@@ -121,6 +122,10 @@ class Player(pygame.sprite.Sprite):
         self.direction = "left"
         self.mine_map = np.zeros((10,10),dtype=int)
         self.sonar_map = np.zeros((10,10),dtype=int)
+        # position
+        self.wallDistance = [0,0,0,0,0,0,0,0]
+        self.signalDistance = [0,0,0,0,0,0,0,0]
+        self.mineDistance = [0,0,0,0,0,0,0,0]
 
     def orientation(self):
         # change image according to life
@@ -137,6 +142,18 @@ class Player(pygame.sprite.Sprite):
                 self.position[i] = 9
             if (self.position[i] < 0):
                 self.position[i] = 0
+    
+    def wallDirection(self):
+        # direction of walls [N,NE,E,SE,S,SW,W,NW]
+        N = self.position[1]
+        E = 9-self.position[0]
+        S = 9-self.position[1]
+        W = self.position[0]
+        NE = 2*N if (N < E) else 2*E
+        NW = 2*N if (N < W) else 2*W
+        SE = 2*S if (S < E) else 2*E
+        SW = 2*S if (S < W) else 2*W
+        self.wallDistance = [N,NE,E,SE,S,SW,W,NW]
                 
     def update(self,game):
         grid = game.window.gridCoordinate
@@ -450,15 +467,45 @@ class underwater() :
         pl.show()
         return agent
     
+    def signalDirection(self,player):
+        # signalDistance [N,NE,E,SE,S,SW,W,NW]
+        # signalDistance [0,1 ,2,3 ,4,5 ,6,7 ]
+        player.signalDistance = list(np.zeros(8,dtype=int))
+        px = player.position[0]
+        py = player.position[1]
+        sx = self.signal[0].position[0]
+        sy = self.signal[0].position[1]
+        if(px == sx):
+            if(px > sx):
+                player.signalDistance[0] = px - sx # objectif North
+            else:
+                player.signalDistance[4] = sx - px # objectif South
+        else if (py == sy):
+            if(py > sy):
+                player.signalDirection[6] = py - sy # objectif West
+            else :
+                player.signalDirection[2] = sy - py # objectif East
+        else if(px > sx and py > sy):
+            player.signalDirection[7] = abs(sx-px)+abs(sy-py)  # objectif North West
+        else if(px < sx and py > sy):
+            player.signalDirection[1] = abs(sx-px)+abs(sy-py)  # objectif North East
+        else if(px > sx and py < sy):
+            player.signalDirection[5] = abs(sx-px)+abs(sy-py)  # objectif South West
+        else if(px < sx and py < sy):
+            player.signalDirection[3] = abs(sx-px)+abs(sy-py)  # objectif South East
+        print( player.signalDirection)
+        
     def observation(self):
         
+        # changing input to -> 8 direction of signal
+        # 8 directions of mines
+        # 8 directions of wall
+        # direction of walls [N,NE,E,SE,S,SW,W,NW]
+        self.player[0].wallDirection()
+        obs = self.player[0].wallDistance
         
-        obs = [float(self.player[0].position[0]),float(self.player[0].position[1]),
-            float(self.player[0].life),
-            float(self.signal[0].position[0]),float(self.signal[0].position[1])]
-        obs = obs + list(self.player[0].mine_map.reshape(-1))
         
-        return obs # 105 sized input
+        return obs # 3*8 : 24 sized input
     
     def step(self, action_number):
         
@@ -513,7 +560,7 @@ class underwater() :
 # pl.scatter(np.arange(len(mlp.scoreEvolution)),mlp.scoreEvolution)
       
 # %% manual Play
-manual_play = False
+manual_play = True
 load_agent = False
 path = r'../DeepQ'
 if (manual_play):
@@ -541,7 +588,7 @@ if (IA_play):
     #agent.save(path)
 
 # %% Try Deep Q
-train_deep_Q = True
+train_deep_Q = False
 load_agent = True
 if (train_deep_Q):
     scores, eps_history, win, lifes= [], [], [], []

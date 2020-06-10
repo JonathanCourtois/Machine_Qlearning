@@ -480,20 +480,85 @@ class underwater() :
                 player.signalDistance[0] = px - sx # objectif North
             else:
                 player.signalDistance[4] = sx - px # objectif South
-        else if (py == sy):
+        elif(py == sy):
             if(py > sy):
-                player.signalDirection[6] = py - sy # objectif West
+                player.signalDistance[6] = py - sy # objectif West
             else :
-                player.signalDirection[2] = sy - py # objectif East
-        else if(px > sx and py > sy):
-            player.signalDirection[7] = abs(sx-px)+abs(sy-py)  # objectif North West
-        else if(px < sx and py > sy):
-            player.signalDirection[1] = abs(sx-px)+abs(sy-py)  # objectif North East
-        else if(px > sx and py < sy):
-            player.signalDirection[5] = abs(sx-px)+abs(sy-py)  # objectif South West
-        else if(px < sx and py < sy):
-            player.signalDirection[3] = abs(sx-px)+abs(sy-py)  # objectif South East
+                player.signalDistance[2] = sy - py # objectif East
+        elif(px > sx and py > sy):
+            player.signalDistance[7] = abs(sx-px)+abs(sy-py)  # objectif North West
+        elif(px < sx and py > sy):
+            player.signalDistance[1] = abs(sx-px)+abs(sy-py)  # objectif North East
+        elif(px > sx and py < sy):
+            player.signalDistance[5] = abs(sx-px)+abs(sy-py)  # objectif South West
+        elif(px < sx and py < sy):
+            player.signalDistance[3] = abs(sx-px)+abs(sy-py)  # objectif South East
         print( player.signalDirection)
+    
+    def mineDirection(self,player,mine):
+        # minesDistance [N,NE,E,SE,S,SW,W,NW]
+        # minesDistance [0,1 ,2,3 ,4,5 ,6,7 ]
+        minesDistance = list(np.zeros(8,dtype=int))
+        px = player.position[0]
+        py = player.position[1]
+        sx = mine.position[0]
+        sy = mine.position[1]
+        if(mine.hidden == False):
+            if(px == sx):
+                if(py > sy):
+                    minesDistance[0] = py - sy # objectif North
+                else:
+                    minesDistance[4] = sy - py # objectif South
+            elif (py == sy):
+                if(px > sx):
+                    minesDistance[6] = px - sx # objectif West
+                else :
+                    minesDistance[2] = sx - px # objectif East
+            elif(px > sx and py > sy):
+                minesDistance[7] = abs(sx-px)+abs(sy-py)  # objectif North West
+            elif(px < sx and py > sy):
+                minesDistance[1] = abs(sx-px)+abs(sy-py)  # objectif North East
+            elif(px > sx and py < sy):
+                minesDistance[5] = abs(sx-px)+abs(sy-py)  # objectif South West
+            elif(px < sx and py < sy):
+                minesDistance[3] = abs(sx-px)+abs(sy-py)  # objectif South East
+        return minesDistance
+    
+    def signalDirection(self,player,signal):
+        # minesDistance [N,NE,E,SE,S,SW,W,NW]
+        # minesDistance [0,1 ,2,3 ,4,5 ,6,7 ]
+        signalDistance = list(np.zeros(8,dtype=int))
+        px = player.position[0]
+        py = player.position[1]
+        sx = signal.position[0]
+        sy = signal.position[1]
+        if(px == sx):
+            if(py > sy):
+                signalDistance[0] = py - sy # objectif North
+            else:
+                signalDistance[4] = sy - py # objectif South
+        elif (py == sy):
+            if(px > sx):
+                signalDistance[6] = px - sx # objectif West
+            else :
+                signalDistance[2] = sx - px # objectif East
+        elif(px > sx and py > sy):
+            signalDistance[7] = abs(sx-px)+abs(sy-py)  # objectif North West
+        elif(px < sx and py > sy):
+            signalDistance[1] = abs(sx-px)+abs(sy-py)  # objectif North East
+        elif(px > sx and py < sy):
+            signalDistance[5] = abs(sx-px)+abs(sy-py)  # objectif South West
+        elif(px < sx and py < sy):
+            signalDistance[3] = abs(sx-px)+abs(sy-py)  # objectif South East
+        return signalDistance
+    
+    def closestMinesDistance(self,player):
+        closestMineArray = np.zeros((len(self.mine),8),dtype=int)
+        for i in range(len(self.mine)):
+            closestMineArray[i] = self.mineDirection(player,self.mine[i])
+        closestMineArray = list(np.min(np.array(closestMineArray)+(np.array(closestMineArray)==0)*20,0))
+        closestMineArray = list(np.array(closestMineArray)-(np.array(closestMineArray)==20)*20)
+        return closestMineArray
         
     def observation(self):
         
@@ -503,9 +568,11 @@ class underwater() :
         # direction of walls [N,NE,E,SE,S,SW,W,NW]
         self.player[0].wallDirection()
         obs = self.player[0].wallDistance
-        
-        
-        return obs # 3*8 : 24 sized input
+        obs += self.closestMinesDistance(self.player[0])
+        obs += self.signalDirection(self.player[0], self.signal[0])
+        obs += [self.player[0].life]
+        obs = list(np.array(obs,dtype=float))
+        return obs # 3*8 + 1 : 25 sized input
     
     def step(self, action_number):
         
@@ -565,12 +632,14 @@ load_agent = False
 path = r'../DeepQ'
 if (manual_play):
     agent = Agent(gamma=0.99, epsilon = 1.0, batch_size=1, n_actions = 5,
-                  eps_end=0.01, input_dims=[105], lr=0.001)
+                  eps_end=0.01, input_dims=[25], lr=0.001)
     if (load_agent):
         agent.load(path)
     game = underwater()
     game.window.toggle()
+    observation = game.observation()
     agent = game.start(IA = False , agent = agent)
+    observation = game.observation()
     pygame.quit()
     # agent.save(path)
     
@@ -578,7 +647,7 @@ IA_play = False
 load_agent = False
 if (IA_play):
     agent = Agent(gamma=0.99, epsilon = 1.0, batch_size=1, n_actions = 5,
-                  eps_end=0.01, input_dims=[105], lr=0.001)
+                  eps_end=0.01, input_dims=[25], lr=0.001)
     if (load_agent):
         agent.load(path)
     game = underwater()
@@ -587,15 +656,21 @@ if (IA_play):
     pygame.quit()
     #agent.save(path)
 
+# %% 
+j = None
 # %% Try Deep Q
-train_deep_Q = False
-load_agent = True
+train_deep_Q = True
+load_agent = False
+
 if (train_deep_Q):
     scores, eps_history, win, lifes= [], [], [], []
-    n_games = 2000
-    
-    agent = Agent(gamma=0.99, epsilon = 1, batch_size=100, n_actions = 5,
-                  eps_end=0.01, input_dims=[105], lr=0.01)
+    n_games = 100  
+    MINE_BOOMB_NB = 12
+    # time counter
+    time_ctr = time.time()
+    meanTime = 1
+    agent = Agent(gamma=0.90, epsilon = 1, batch_size=10, n_actions = 5,
+                  eps_end=0.01, input_dims=[25], lr=0.01)
     
     if (load_agent):
         agent.load(path)
@@ -618,19 +693,39 @@ if (train_deep_Q):
             agent.learn()
             observation = observation_
         # END WHILE
-        scores.append(score)
+        if (i==0):
+            scores.append(score)
+            lifes.append(game.player[0].life)
+            win.append(game.win_flag)
+        else:  
+            scores.append((np.sum(scores)+score)/len(scores))
+            lifes.append((np.sum(lifes)+game.player[0].life)/len(lifes))
+            win.append((np.sum(win)+game.win_flag)/len(win))
+            
         eps_history.append(agent.epsilon)
-        lifes.append(game.player[0].life)
-        win.append(game.win_flag)
-        avg_score = np.mean(scores[:])
+        avg_score = scores[-1]
         pl.figure(0)
         pl.plot(game.scoreEvolution, label='game'+str(i))
         pl.title('game reward evolution')
         pygame.quit()
         
+        # time estimation
+        loopTime = time.time() - time_ctr # seconds 
+        estimation = (loopTime * (n_games-i)) / (i+1) # cross product
+        
+        m = estimation // 60
+        h = m // 60
         print('episode', i, 'score %.2f' % score,
                   'average score %.2f' % avg_score,
-                  'epsilon %.2f' %agent.epsilon)
+                  'epsilon %.2f' %agent.epsilon,
+                  'estimated time %.2f' %h,
+                  'h %.2f' % (m-60*h),
+                  'm %.2f s' % (estimation-60*m))
+        
+    s = time.time() - time_ctr
+    m = s//60
+    h = m//60
+    print('{} games in {} h, {} min, {} s'.format(n_games, h, m, s-60*h-60*m))
     agent.save(path)
     print('agent saved')
         

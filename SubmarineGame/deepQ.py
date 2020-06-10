@@ -69,12 +69,14 @@ class Agent():
         self.terminal_memory = np.zeros(self.mem_size, dtype=np.bool)
 
     def save(self, path):
-        self.Q_eval.save(path+'\\q_eval.txt')
-        self.Q_next.save(path+'\\q_next.txt')
+        T.save(self.Q_eval.state_dict(),path+'\\Qeval.txt')
+        T.save(self.Q_next.state_dict(),path+'\\Qnext.txt')
 
     def load(self, path):
-        self.Q_eval = T.load(path+'\\q_eval.txt')
-        self.Q_next = T.load(path+'\\q_next.txt')
+        self.Q_eval.load_state_dict(T.load(path+'\\Qeval.txt'))
+        self.Q_next.load_state_dict(T.load(path+'\\Qnext.txt'))
+        self.Q_eval.eval()
+        self.Q_next.eval()
         
     def store_transition(self, state, action, reward, state_, terminal):
         index = self.mem_cntr % self.mem_size
@@ -89,7 +91,7 @@ class Agent():
     def choose_action(self, observation):
         if np.random.random() > self.epsilon:
             state = T.tensor([observation]).to(self.Q_eval.device)
-            actions = self.Q_eval.forward(state)
+            actions = self.Q_eval.forward(state.float())
             action = T.argmax(actions).item()
         else:
             action = np.random.choice(self.action_space)

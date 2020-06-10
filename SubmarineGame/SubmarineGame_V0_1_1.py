@@ -698,9 +698,9 @@ if (train_deep_Q):
             lifes.append(game.player[0].life)
             win.append(game.win_flag)
         else:  
-            scores.append((np.sum(scores)+score)/len(scores))
-            lifes.append((np.sum(lifes)+game.player[0].life)/len(lifes))
-            win.append((np.sum(win)+game.win_flag)/len(win))
+            scores.append((np.sum(scores)+score)/(len(scores)+1))
+            lifes.append((np.sum(lifes)+game.player[0].life)/(len(lifes)+1))
+            win.append((np.sum(win)+game.win_flag)/(len(win)+1))
             
         eps_history.append(agent.epsilon)
         avg_score = scores[-1]

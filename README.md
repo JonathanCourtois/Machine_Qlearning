@@ -5,7 +5,7 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-/!\ This project is on construction /!\
+/!\ WORK IN PROGRESS on This project /!\
 
 <!-- PROJECT LOGO -->
 <br />
